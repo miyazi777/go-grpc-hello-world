@@ -18,6 +18,7 @@ func main() {
 	}
 	defer con.Close()
 
+	// Bearer tokenを設定
 	md := metadata.New(map[string]string{"authorization": "Bearer testtoken"})
 	ctx := metadata.NewOutgoingContext(context.Background(), md)
 
