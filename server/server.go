@@ -37,7 +37,6 @@ func authenticate(ctx context.Context) (context.Context, error) {
 	if err != nil {
 		return nil, err
 	}
-	fmt.Println(token)
 	if token != "testtoken" {
 		return nil, errors.New("unauthorized")
 	}
