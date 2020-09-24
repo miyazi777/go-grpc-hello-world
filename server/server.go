@@ -8,6 +8,7 @@ import (
 	"test/hello"
 
 	"google.golang.org/grpc"
+	"google.golang.org/grpc/reflection"
 )
 
 func main() {
@@ -17,6 +18,7 @@ func main() {
 	}
 	server := grpc.NewServer()
 	hello.RegisterHelloServer(server, &Hello{})
+	reflection.Register(server)
 	server.Serve(listenPort)
 }
 
